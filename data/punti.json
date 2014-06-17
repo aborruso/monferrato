@@ -1,0 +1,47 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "etichetta": "Asti",
+        "html": "<p>To scan the lines of his face, or feel the bumps on the head of this Leviathan; this is a thing which no Physiognomist or Phrenologist has as yet undertaken.</p>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.206787109375,
+          44.904523389609324
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "etichetta": "Alba",
+        "html": "<p>To scan the lines of his face, or feel the bumps on the head of this Leviathan; this is a thing which no Physiognomist or Phrenologist has as yet undertaken.</p>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.024139404296875,
+          44.70575417971902
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "etichetta": "Canelli",
+        "html": "<p>To scan the lines of his face, or feel the bumps on the head of this Leviathan; this is a thing which no Physiognomist or Phrenologist has as yet undertaken.</p>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.287811279296875,
+          44.734052347483086
+        ]
+      }
+    }
+  ]
+}
