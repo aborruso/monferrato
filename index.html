@@ -2,20 +2,13 @@
 <html>
 <head>
 	<meta charset=utf-8 />
-	<title>Opacity control</title>
+	<title>Test Monferrato</title>
 	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 	<script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.js'></script>
 	<link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css' rel='stylesheet' />
 	<style>
 	body { margin:0; padding:0; }
 	#map { position:absolute; top:0; bottom:0; width:100%; }
-	</style>
-</head>
-
-
-
-<body>
-	<style>
 	.ui-opacity {
 		background:#FFF;
 		position:absolute;
@@ -41,25 +34,22 @@
 	.ui-opacity .handle:hover {
 		background:#303030;
 	}
-	</style>
 
-	<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.js'></script>
-	<link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.css' rel='stylesheet' />
+	</style>
+</head>
+
+<body>
+
+
+	<script src='http://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.js'></script>
+	<link href='http://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.css' rel='stylesheet' />
 
 	<div id='map'></div>
-	<div id='control' class='ui-opacity'>
-		<div id='handle' class='handle'></div>
-	</div>
 
 	<script>
-	var handle = document.getElementById('handle'),
-	start = false,
-	startTop;
 
-	var map = L.mapbox.map('map').on('ready', function() {
-        new L.Control.MiniMap(L.mapbox.tileLayer('examples.map-i86nkdio'))
-            .addTo(map);
-    });
+
+	var map = L.mapbox.map('map');
 
 	var southWest = L.latLng(44.80588,7.52021),
 	northEast = L.latLng(45.38922,9.03932),
@@ -80,21 +70,6 @@
 	}).addTo(map);
 
 
-	document.onmousemove = function(e) {
-		if (!start) return;
-		handle.style.top = Math.max(-5, Math.min(195, startTop + parseInt(e.clientY, 10) - start)) + 'px';
-		topo.setOpacity(1 - (handle.offsetTop / 200));
-	};
-
-	handle.onmousedown = function(e) {
-		start = parseInt(e.clientY, 10);
-		startTop = handle.offsetTop - 5;
-		return false;
-	};
-
-	document.onmouseup = function(e) {
-		start = null;
-	};
 
 	var puntigeojson = [
 	{
@@ -203,7 +178,12 @@
 			"type": "Feature",
 			"properties": {
 				"description": "<p>To scan the lines of his face, or feel the bumps on the head of this Leviathan; this is a thing which no Physiognomist or Phrenologist has as yet undertaken.</p>",
-				"title": "Linea 2"
+				"title": "Linea 2",
+"style": {
+        "color": "#00FFFF",
+        "weight": 2,
+        "opacity": 0.9
+    }
 			},
 			"geometry": {
 				"type": "LineString",
@@ -248,6 +228,7 @@
 
 	var linee = L.mapbox.featureLayer(linegeojson);
 
+	var minimappa = new L.Control.MiniMap(L.mapbox.tileLayer('examples.map-h67hf2ic'),{zoomLevelOffset:-4,toggleDisplay:true}).addTo(map);
 
 
 	L.control.layers({
@@ -255,7 +236,7 @@
 	}, {
 		'punti': punti.addTo(map),
 		'linee': linee,
-		'test': CG_026_transTPS_24p
+		'raster': CG_026_transTPS_24p
 	}).addTo(map);
 
 	</script>
