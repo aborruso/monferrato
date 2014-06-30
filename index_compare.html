@@ -50,10 +50,8 @@
 
 	<script>
 
-	var map1 = L.mapbox.map('map1')
-	.setView([40, -74.50], 9);
-	var map2 = L.mapbox.map('map2')
-	.setView([40, -74.50], 9);
+	var map1 = L.mapbox.map('map1');
+	var map2 = L.mapbox.map('map2');
 
 
 	map1.on('moveend', follow).on('zoomend', follow);
@@ -107,7 +105,7 @@
 		tms: true,
 		opacity: 1,
 		zIndex: 1
-	}).addTo(map);
+	}).addTo(map1);
 
 
 
