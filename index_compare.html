@@ -27,7 +27,7 @@
 	<link href='http://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.css' rel='stylesheet' />
 	<script src="./plugins/L.Control.Sidebar.js"></script>
 
-	<div id="sidebar">
+<!-- 	<div id="sidebar">
 		<h1>Una sidebar a disposizione</h1>
 
 
@@ -38,39 +38,66 @@
 		<p class="lorem">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
 		
 		<p class="lorem">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-	</div>
+	</div> -->
 
-	<div id='map'></div>
+	<div id='map1'></div>
+	<div id='map2'></div>
+	<style>
+	#map1 { position:absolute; top:0; bottom:0; left:0; right:50%; }
+	#map2 { position:absolute; top:0; bottom:0; left:50%; right:0; }
+	</style>
 
 	<script>
 
+	var map1 = L.mapbox.map('map1')
+	.setView([40, -74.50], 9);
+	var map2 = L.mapbox.map('map2')
+	.setView([40, -74.50], 9);
 
-	var map = L.mapbox.map('map');
+
+	map1.on('moveend', follow).on('zoomend', follow);
+	map2.on('moveend', follow).on('zoomend', follow);
+
+
+	var quiet = false;
+	function follow(e) {
+		if (quiet) return;
+		quiet = true;
+		if (e.target === map1) sync(map2, e);
+		if (e.target === map2) sync(map1, e);
+		quiet = false;
+	}
+
+	function sync(map, e) {
+		map.setView(e.target.getCenter(), e.target.getZoom(), {
+			animate: false,
+			reset: true
+		});
+	}
+
+	//var map = L.mapbox.map('map');
 
 
 	var southWest = L.latLng(43.97914,7.59969),
 	northEast = L.latLng(45.30694,9.19831),
 	bounds = L.latLngBounds(southWest, northEast);
 
-	map.fitBounds(bounds);
+	map1.fitBounds(bounds);
 
-	var topo = L.mapbox.tileLayer('examples.map-h67hf2ic', {
-		zIndex: 0
-	});
 
 	var topo = L.tileLayer (
 		'http://{s}.acetate.geoiq.com/tiles/acetate/{z}/{x}/{y}.png',
 		{
 			attribution: 'Acetate tileset from GeoIQ'
 		}
-		).addTo(map);
+		).addTo(map2);
 
 	var CG_52 = L.tileLayer('tiles/CG_52_5/{z}/{x}/{y}.png', {
 		minZoom: 6,
 		maxZoom: 12,
 		tms: true,
 		opacity: 1,
-		zIndex: 1
+		zIndex: 2
 	});
 
 	var CG_38 = L.tileLayer('tiles/CG_38/{z}/{x}/{y}.png', {
@@ -78,16 +105,16 @@
 		maxZoom: 11,
 		tms: true,
 		opacity: 1,
-		zIndex: 2
+		zIndex: 1
 	}).addTo(map);
 
-	
+
 
 	var punti = L.mapbox.featureLayer(puntigeojson,{zIndex: 4});
 
 	var linee = L.mapbox.featureLayer(linegeojson,{zIndex: 3});
 
-	var minimappa = new L.Control.MiniMap(L.mapbox.tileLayer('examples.map-h67hf2ic'),{zoomLevelOffset:-4,toggleDisplay:true}).addTo(map);
+	var minimappa = new L.Control.MiniMap(L.mapbox.tileLayer('examples.map-h67hf2ic'),{zoomLevelOffset:-4,toggleDisplay:true}).addTo(map2);
 
 
 	L.control.layers({
@@ -97,13 +124,13 @@
 		'CG_52': CG_52,
 		'linee': linee,
 		'punti': punti		
-	},{autoZIndex:false}).addTo(map);
+	},{autoZIndex:false}).addTo(map1);
 
 	var sidebar = L.control.sidebar('sidebar', {
 		closeButton: true,
 		position: 'left'
 	});
-	map.addControl(sidebar);
+	//map.addControl(sidebar);
 
 	setTimeout(function () {
 		sidebar.show();
