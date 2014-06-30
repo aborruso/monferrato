@@ -51,8 +51,8 @@
 
 	var map = L.mapbox.map('map');
 
-	var southWest = L.latLng(44.17783,7.15187),
-	northEast = L.latLng(45.86262,9.19905),
+	var southWest = L.latLng(43.60945,5.19130),
+	northEast = L.latLng(46.66730,11.09214),
 	bounds = L.latLngBounds(southWest, northEast);
 
 	map.fitBounds(bounds);
@@ -69,11 +69,11 @@
 		).addTo(map);
 
 	var CG_52 = L.tileLayer('tiles/CG_38/{z}/{x}/{y}.png', {
-		minZoom: 6,
-		maxZoom: 12,
+		minZoom: 5,
+		maxZoom: 11,
         //attribution: 'Comune di Palermo',
         tms: true,
-        opacity: 0.7
+        opacity: 0.6
     }).addTo(map);
 
 	var puntigeojson = [
