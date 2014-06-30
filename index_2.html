@@ -46,8 +46,8 @@
 		).addTo(map);
 
 	var CG_52 = L.tileLayer('tiles/CG_52_5/{z}/{x}/{y}.png', {
-		minZoom: 5,
-		maxZoom: 11,
+		minZoom: 6,
+		maxZoom: 12,
         tms: true,
         opacity: 0.6
     });
@@ -225,7 +225,7 @@
 	L.control.layers({
 		'Base': topo
 	}, {
-		'punti': punti.addTo(map),
+		'punti': punti,
 		'linee': linee,
 		'CG_52': CG_52,
 		'CG_38': CG_38,
