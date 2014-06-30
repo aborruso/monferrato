@@ -65,9 +65,9 @@
 
 	
 
-	var punti = L.mapbox.featureLayer(puntigeojson,zIndex: 4);
+	var punti = L.mapbox.featureLayer(puntigeojson,{zIndex: 4});
 
-	var linee = L.mapbox.featureLayer(linegeojson,zIndex: 3);
+	var linee = L.mapbox.featureLayer(linegeojson,{zIndex: 3});
 
 	var minimappa = new L.Control.MiniMap(L.mapbox.tileLayer('examples.map-h67hf2ic'),{zoomLevelOffset:-4,toggleDisplay:true}).addTo(map);
 
