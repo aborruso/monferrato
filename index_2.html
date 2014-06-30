@@ -26,7 +26,7 @@
 
 
 	var map = L.mapbox.map('map');
-	
+
 
 	var southWest = L.latLng(43.97914,7.59969),
 	northEast = L.latLng(45.30694,9.19831),
@@ -50,7 +50,7 @@
 		maxZoom: 11,
         tms: true,
         opacity: 0.6
-    }).addTo(map);
+    });
 
 	var CG_38 = L.tileLayer('tiles/CG_38/{z}/{x}/{y}.png', {
 		minZoom: 5,
