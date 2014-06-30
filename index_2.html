@@ -60,12 +60,12 @@
 		maxZoom: 11,
 		tms: true,
 		opacity: 1,
-		zIndex: 2
+		zIndex: 4
 	}).addTo(map);
 
 	
 
-	var punti = L.mapbox.featureLayer(puntigeojson,{zIndex: 4});
+	var punti = L.mapbox.featureLayer(puntigeojson,{zIndex: 2});
 
 	var linee = L.mapbox.featureLayer(linegeojson,{zIndex: 3});
 
