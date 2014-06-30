@@ -2,266 +2,236 @@
 <html>
 <head>
 	<meta charset=utf-8 />
-	<title>Opacity control</title>
+	<title>Test Monferrato</title>
 	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 	<script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.js'></script>
 	<link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css' rel='stylesheet' />
-
-	<link rel="stylesheet" href="js/opacity/Control.Opacity.css" />
-	<script src="js/opacity/Control.Opacity.js"></script>
-        
-    
-	<script src="js/jquery/jquery-1.9.1.js"></script>
-	<script src="js/jquery/jquery-ui-1.10.3.custom.min.js"></script>
-	<link rel="stylesheet" href="js/jquery/jquery-ui-1.10.3.custom.min.css" />
-
 	<style>
 	body { margin:0; padding:0; }
 	#map { position:absolute; top:0; bottom:0; width:100%; }
+	
+
 	</style>
 </head>
+
 <body>
-	<style>
-	.ui-opacity {
-		background:#FFF;
-		position:absolute;
-		left:10px;
-		top:70px;
-		height:200px;
-		width:28px;
-		border:1px solid rgba(0,0,0,0.4);
-		border-radius:3px;
-		z-index:1000;
-	}
-	.ui-opacity .handle {
-		position:absolute;
-		background:#404040;
-		left:0;
-		top:20px;
-		width:26px;
-		height:10px;
-		border-radius:1px;
-		cursor:pointer;
-		cursor:ns-resize;
-	}
-	.ui-opacity .handle:hover {
-		background:#303030;
-	}
-	</style>
+
+
+	<script src='http://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.js'></script>
+	<link href='http://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.css' rel='stylesheet' />
 
 	<div id='map'></div>
-	<div id='control' class='ui-opacity'>
-		<div id='handle' class='handle'></div>
-	</div>
 
 	<script>
-	var handle = document.getElementById('handle'),
-	start = false,
-	startTop;
+
 
 	var map = L.mapbox.map('map');
 
-	var southWest = L.latLng(44.80588,7.52021),
-    northEast = L.latLng(45.38922,9.03932),
-    bounds = L.latLngBounds(southWest, northEast);
+	var southWest = L.latLng(43.60945,5.19130),
+	northEast = L.latLng(46.66730,11.09214),
+	bounds = L.latLngBounds(southWest, northEast);
 
-    map.fitBounds(bounds);
+	map.fitBounds(bounds);
 
 	var topo = L.mapbox.tileLayer('examples.map-h67hf2ic', {
 		zIndex: 3
-	})
-	.addTo(map);
-	var foto = L.mapbox.tileLayer('aibram.Aerial', {
-		zIndex: 2
-	})
-	.addTo(map);
+	});
 
-	document.onmousemove = function(e) {
-		if (!start) return;
-    // Adjust control.
-    handle.style.top = Math.max(-5, Math.min(195, startTop + parseInt(e.clientY, 10) - start)) + 'px';
-    // Adjust opacity.
-    topo.setOpacity(1 - (handle.offsetTop / 200));
-};
+	var topo = L.tileLayer (
+		'http://{s}.acetate.geoiq.com/tiles/acetate/{z}/{x}/{y}.png',
+		{
+			attribution: 'Acetate tileset from GeoIQ'
+		}
+		).addTo(map);
 
-handle.onmousedown = function(e) {
-    // Record initial positions.
-    start = parseInt(e.clientY, 10);
-    startTop = handle.offsetTop - 5;
-    return false;
-};
+	var CG_52 = L.tileLayer('tiles/CG_52_5/{z}/{x}/{y}.png', {
+		minZoom: 5,
+		maxZoom: 11,
+        //attribution: 'Comune di Palermo',
+        tms: true,
+        opacity: 0.6
+    }).addTo(map);
 
-document.onmouseup = function(e) {
-	start = null;
-};
+	var CG_38 = L.tileLayer('tiles/CG_52_5/{z}/{x}/{y}.png', {
+		minZoom: 5,
+		maxZoom: 11,
+        //attribution: 'Comune di Palermo',
+        tms: true,
+        opacity: 0.6
+    }).addTo(map);
 
-var puntigeojson = [
-{
-	"type": "Feature",
-	"geometry": {
-		"type": "Point",
-		"coordinates": [
-		8.206787109375,
-		44.904523389609324
-		]
-	},
-	"properties": {
-		"title": "Asti",
-		"description": "<p>To scan the lines of his face, or feel the bumps on the head of this Leviathan; this is a thing which no Physiognomist or Phrenologist has as yet undertaken.</p>",
-		"marker-color": "#95C92B",
-		"marker-size": "large",
-		"marker-symbol": "monument"
-	}
-},
-{
-	"type": "Feature",
-	"geometry": {
-		"type": "Point",
-		"coordinates": [
-		8.024139404296875,
-		44.70575417971902
-		]
-	},
-	"properties": {
-		"title": "Alba",
-		"description": "<p>To scan the lines of his face, or feel the bumps on the head of this Leviathan; this is a thing which no Physiognomist or Phrenologist has as yet undertaken.</p>",
-		"marker-color": "#63B6E5",
-		"marker-size": "large",
-		"marker-symbol": "harbor"
-	}
-},
-{
-	"type": "Feature",
-	"geometry": {
-		"type": "Point",
-		"coordinates": [
-		8.287811279296875,
-		44.734052347483086
-		]
-	},
-	"properties": {
-		"title": "Canelli",
-		"description": "<p>To scan the lines of his face, or feel the bumps on the head of this Leviathan; this is a thing which no Physiognomist or Phrenologist has as yet undertaken.</p>",
-		"marker-color": "#fc4353",
-		"marker-size": "large",
-		"marker-symbol": "harbor"
-	}
-}
-];
-
-var punti = L.mapbox.featureLayer(puntigeojson);
-
-var linegeojson = [{
-	"type": "FeatureCollection",
-	"features": [
+	var puntigeojson = [
 	{
 		"type": "Feature",
-		"properties": {
-			"description": "<p>To scan the lines of his face, or feel the bumps on the head of this Leviathan; this is a thing which no Physiognomist or Phrenologist has as yet undertaken.</p>",
-			"title": "Linea 1"
-		},
 		"geometry": {
-			"type": "LineString",
+			"type": "Point",
 			"coordinates": [
-			[
-			7.95135498046875,
-			44.69013547299005
-			],
-			[
-			8.02825927734375,
-			44.7018498980029
-			],
-			[
-			8.0419921875,
-			44.749659205143296
-			],
-			[
-			8.125762939453125,
-			44.7691618526244
-			],
-			[
-			8.166961669921875,
-			44.85586880735725
-			],
-			[
-			8.2012939453125,
-			44.89090425391711
-			],
-			[
-			8.268585205078125,
-			44.909386584900034
-			],
-			[
-			8.307037353515625,
-			44.88895839978044
+			8.206787109375,
+			44.904523389609324
 			]
-			]
+		},
+		"properties": {
+			"title": "Asti",
+			"description": "<p>To scan the lines of his face, or feel the bumps on the head of this Leviathan; this is a thing which no Physiognomist or Phrenologist has as yet undertaken.</p>",
+			"marker-color": "#95C92B",
+			"marker-size": "large",
+			"marker-symbol": "monument"
 		}
 	},
 	{
 		"type": "Feature",
-		"properties": {
-			"description": "<p>To scan the lines of his face, or feel the bumps on the head of this Leviathan; this is a thing which no Physiognomist or Phrenologist has as yet undertaken.</p>",
-			"title": "Linea 2"
-		},
 		"geometry": {
-			"type": "LineString",
+			"type": "Point",
 			"coordinates": [
-			[
-			8.15185546875,
-			44.65009330721101
-			],
-			[
-			8.1903076171875,
-			44.71453785084758
-			],
-			[
-			8.18206787109375,
-			44.761361583580005
-			],
-			[
-			8.136749267578125,
-			44.76331174958473
-			],
-			[
-			8.084564208984375,
-			44.817889670988784
-			],
-			[
-			8.112030029296875,
-			44.85684230221507
-			],
-			[
-			8.1024169921875,
-			44.89187715629887
-			],
-			[
-			8.0584716796875,
-			44.89285004222294
+			8.024139404296875,
+			44.70575417971902
 			]
+		},
+		"properties": {
+			"title": "Alba",
+			"description": "<p>To scan the lines of his face, or feel the bumps on the head of this Leviathan; this is a thing which no Physiognomist or Phrenologist has as yet undertaken.</p>",
+			"marker-color": "#63B6E5",
+			"marker-size": "large",
+			"marker-symbol": "harbor"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [
+			8.287811279296875,
+			44.734052347483086
 			]
+		},
+		"properties": {
+			"title": "Canelli",
+			"description": "<p>To scan the lines of his face, or feel the bumps on the head of this Leviathan; this is a thing which no Physiognomist or Phrenologist has as yet undertaken.</p>",
+			"marker-color": "#fc4353",
+			"marker-size": "large",
+			"marker-symbol": "harbor"
 		}
 	}
-	]
-}];
+	];
 
-var linee = L.mapbox.featureLayer(linegeojson);
+	var punti = L.mapbox.featureLayer(puntigeojson);
 
-var CG_026_transTPS_24p = L.tileLayer('data/CG_026_transTPS_24p/{z}/{x}/{y}.png', {
-	minZoom: 7,
-	maxZoom: 10,
-	tms: true,
-	opacity: 1
-});
+	var linegeojson = [{
+		"type": "FeatureCollection",
+		"features": [
+		{
+			"type": "Feature",
+			"properties": {
+				"description": "<p>To scan the lines of his face, or feel the bumps on the head of this Leviathan; this is a thing which no Physiognomist or Phrenologist has as yet undertaken.</p>",
+				"title": "Linea 1",
+				"stroke": "#FF2525",
+				"stroke-opacity": 1.0,
+				"stroke-width": 2,
+				"fill":0
+			},
+			"geometry": {
+				"type": "LineString",
+				"coordinates": [
+				[
+				7.95135498046875,
+				44.69013547299005
+				],
+				[
+				8.02825927734375,
+				44.7018498980029
+				],
+				[
+				8.0419921875,
+				44.749659205143296
+				],
+				[
+				8.125762939453125,
+				44.7691618526244
+				],
+				[
+				8.166961669921875,
+				44.85586880735725
+				],
+				[
+				8.2012939453125,
+				44.89090425391711
+				],
+				[
+				8.268585205078125,
+				44.909386584900034
+				],
+				[
+				8.307037353515625,
+				44.88895839978044
+				]
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"description": "<p>To scan the lines of his face, or feel the bumps on the head of this Leviathan; this is a thing which no Physiognomist or Phrenologist has as yet undertaken.</p>",
+				"title": "Linea 2",
+				"stroke": "#FF5500",
+				"stroke-opacity": 1.0,
+				"stroke-width": 2,
+				"fill":0
+			},
+			"geometry": {
+				"type": "LineString",
+				"coordinates": [
+				[
+				8.15185546875,
+				44.65009330721101
+				],
+				[
+				8.1903076171875,
+				44.71453785084758
+				],
+				[
+				8.18206787109375,
+				44.761361583580005
+				],
+				[
+				8.136749267578125,
+				44.76331174958473
+				],
+				[
+				8.084564208984375,
+				44.817889670988784
+				],
+				[
+				8.112030029296875,
+				44.85684230221507
+				],
+				[
+				8.1024169921875,
+				44.89187715629887
+				],
+				[
+				8.0584716796875,
+				44.89285004222294
+				]
+				]
+			}
+		}
+		]
+	}];
 
-L.control.layers({
-	'Base': topo
-}, {
-	'punti': punti.addTo(map),
-	'linee': linee,
-	'test': CG_026_transTPS_24p
-}).addTo(map);
+	var linee = L.mapbox.featureLayer(linegeojson);
 
-</script>
+	var minimappa = new L.Control.MiniMap(L.mapbox.tileLayer('examples.map-h67hf2ic'),{zoomLevelOffset:-4,toggleDisplay:true}).addTo(map);
+
+
+	L.control.layers({
+		'Base': topo
+	}, {
+		'punti': punti.addTo(map),
+		'linee': linee,
+		'CG_52': CG_52,
+		'CG_38': CG_38,
+	}).addTo(map);
+
+	</script>
 </body>
 </html>
