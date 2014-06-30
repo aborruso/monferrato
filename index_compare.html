@@ -51,7 +51,7 @@
 	<script>
 
 	var map1 = L.mapbox.map('map1');
-	var map2 = L.mapbox.map('map2');
+	var map2 = L.mapbox.map('map2','aborruso.ilc3l20e');
 
 
 	map1.on('moveend', follow).on('zoomend', follow);
@@ -89,7 +89,7 @@
 		{
 			attribution: 'Acetate tileset from GeoIQ'
 		}
-		).addTo(map2);
+		);
 
 	var CG_52 = L.tileLayer('tiles/CG_52_5/{z}/{x}/{y}.png', {
 		minZoom: 6,
@@ -117,7 +117,7 @@
 
 
 	L.control.layers({
-		'Base': topo
+		
 	}, {
 		'CG_38': CG_38,		
 		'CG_52': CG_52,
