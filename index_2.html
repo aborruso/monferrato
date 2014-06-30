@@ -17,7 +17,7 @@
 
 <body>
 
-
+	<script type="text/javascript" src="./data/punti.js"></script>
 	<script src='http://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.js'></script>
 	<link href='http://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.css' rel='stylesheet' />
 
@@ -51,70 +51,18 @@
 	var CG_52 = L.tileLayer('tiles/CG_52_5/{z}/{x}/{y}.png', {
 		minZoom: 6,
 		maxZoom: 12,
-        tms: true,
-        opacity: 0.6
-    });
+		tms: true,
+		opacity: 0.6
+	});
 
 	var CG_38 = L.tileLayer('tiles/CG_38/{z}/{x}/{y}.png', {
 		minZoom: 5,
 		maxZoom: 11,
-        tms: true,
-        opacity: 0.6
-    }).addTo(map);
+		tms: true,
+		opacity: 0.6
+	}).addTo(map);
 
-	var puntigeojson = [
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [
-			8.206787109375,
-			44.904523389609324
-			]
-		},
-		"properties": {
-			"title": "Asti",
-			"description": "<p>To scan the lines of his face, or feel the bumps on the head of this Leviathan; this is a thing which no Physiognomist or Phrenologist has as yet undertaken.</p>",
-			"marker-color": "#95C92B",
-			"marker-size": "large",
-			"marker-symbol": "monument"
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [
-			8.024139404296875,
-			44.70575417971902
-			]
-		},
-		"properties": {
-			"title": "Alba",
-			"description": "<p>To scan the lines of his face, or feel the bumps on the head of this Leviathan; this is a thing which no Physiognomist or Phrenologist has as yet undertaken.</p>",
-			"marker-color": "#63B6E5",
-			"marker-size": "large",
-			"marker-symbol": "harbor"
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [
-			8.287811279296875,
-			44.734052347483086
-			]
-		},
-		"properties": {
-			"title": "Canelli",
-			"description": "<p>To scan the lines of his face, or feel the bumps on the head of this Leviathan; this is a thing which no Physiognomist or Phrenologist has as yet undertaken.</p>",
-			"marker-color": "#fc4353",
-			"marker-size": "large",
-			"marker-symbol": "harbor"
-		}
-	}
-	];
+	
 
 	var punti = L.mapbox.featureLayer(puntigeojson);
 
