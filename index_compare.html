@@ -120,16 +120,21 @@
 		
 	}, {
 		'CG_38': CG_38,		
-		'CG_52': CG_52,
+		'CG_52': CG_52	
+	},{autoZIndex:false}).addTo(map1);
+
+	L.control.layers({
+		
+	}, {
 		'linee': linee,
 		'punti': punti		
-	},{autoZIndex:false}).addTo(map1);
+	},{autoZIndex:false}).addTo(map2);
 
 	var sidebar = L.control.sidebar('sidebar', {
 		closeButton: true,
 		position: 'left'
 	});
-	//map.addControl(sidebar);
+	map1.addControl(sidebar);
 
 	setTimeout(function () {
 		sidebar.show();
