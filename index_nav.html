@@ -91,30 +91,20 @@
 		minZoom: 6,
 		maxZoom: 12,
 		tms: true,
-		opacity: 0.6
+		opacity: 1
 	});
 
 	var CG_38 = L.tileLayer('tiles/CG_38/{z}/{x}/{y}.png', {
 		minZoom: 5,
 		maxZoom: 11,
 		tms: true,
-		opacity: 0.6
+		opacity: 1
 	});
 
 	var layers = document.getElementById('menu-ui');
 
-	addLayer(L.tileLayer('tiles/CG_38/{z}/{x}/{y}.png', {
-		minZoom: 5,
-		maxZoom: 11,
-		tms: true,
-		opacity: 0.6
-	}), 'Base Map', 1);
-	addLayer(L.tileLayer('tiles/CG_52_5/{z}/{x}/{y}.png', {
-		minZoom: 6,
-		maxZoom: 12,
-		tms: true,
-		opacity: 0.6
-	}), 'Bike Lanes', 2);
+	addLayer(CG_38, 'Base Map', 1);
+	addLayer(CG_52, 'Bike Lanes', 2);
 
 
 	function addLayer(layer, name, zIndex) {
