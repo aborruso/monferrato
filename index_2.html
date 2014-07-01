@@ -18,13 +18,7 @@
 	#sidebarbutton {
 		position: absolute;
 		bottom: 2px;
-		left: 6px;
-		z-index: 100;
-	}
-	#sidebarbutton {
-		position: absolute;
-		bottom: 2px;
-		left: 2px;
+		left: 10px;
 		z-index: 100;
 		border-width: 1px;
 		-webkit-border-radius: 3px 3px 3px 3px;
@@ -150,7 +144,7 @@
 		'CG_52': CG_52,
 		'linee': linee,
 		'punti': punti		
-	},{autoZIndex:false}).addTo(map);
+	},{autoZIndex:false,collapsed:false}).addTo(map);
 
 	var sidebar = L.control.sidebar('sidebar', {
 		closeButton: true,
