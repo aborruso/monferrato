@@ -1,46 +1,48 @@
-<style type="text/css">
-.sideb {
-	-moz-box-shadow:inset 0px 1px 0px 0px #fceaca;
-	-webkit-box-shadow:inset 0px 1px 0px 0px #fceaca;
-	box-shadow:inset 0px 1px 0px 0px #fceaca;
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffce79), color-stop(1, #eeaf41) );
-	background:-moz-linear-gradient( center top, #ffce79 5%, #eeaf41 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffce79', endColorstr='#eeaf41');
-	background-color:#ffce79;
-	-webkit-border-top-left-radius:6px;
-	-moz-border-radius-topleft:6px;
-	border-top-left-radius:6px;
-	-webkit-border-top-right-radius:6px;
-	-moz-border-radius-topright:6px;
-	border-top-right-radius:6px;
-	-webkit-border-bottom-right-radius:6px;
-	-moz-border-radius-bottomright:6px;
-	border-bottom-right-radius:6px;
-	-webkit-border-bottom-left-radius:6px;
-	-moz-border-radius-bottomleft:6px;
-	border-bottom-left-radius:6px;
-	text-indent:0;
-	border:1px solid #eeb44f;
-	display:inline-block;
-	color:#ffffff;
-	font-family:Courier New;
-	font-size:15px;
-	font-weight:bold;
-	font-style:normal;
-	height:30px;
-	line-height:30px;
-	width:57px;
-	text-decoration:none;
-	text-align:center;
-	text-shadow:1px 1px 0px #ce8e28;
+<style>
+body { margin:0; padding:0; }
+#map { position:absolute; top:0; bottom:0; width:100%; }
+.lorem {
+	font-style: italic;
+	color: #AAA;
+}	
+
+#sidebarbutton {
+	position: absolute;
+	bottom: 2px;
+	left: 10px;
+	z-index: 100;
+	border-width: 1px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	border-radius: 3px 3px 3px 3px;
+	background: #3887BE;
+	border-color: #3887BE;
+	border-top-color: #FFF;
+	padding: 2px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	max-height: 50px;
+	font-size: 11px;
 }
-.sideb:hover {
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #eeaf41), color-stop(1, #ffce79) );
-	background:-moz-linear-gradient( center top, #eeaf41 5%, #ffce79 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeaf41', endColorstr='#ffce79');
-	background-color:#eeaf41;
-}.sideb:active {
-	position:relative;
-	top:1px;
+#sidebarbutton p {
+	padding: 0px;
+	margin: 0px 2px 0px 2px;
+	color: #DAE0F1;
+	font-size: 11px;
+}
+#sidebarbutton img {
+	padding: 0px;
+	margin: 0px;
+}
+#sidebarbutton a:link { 
+	color: #FFF;
+}
+#sidebarbutton a:visited { 
+	color: #FFF;
+}
+#sidebarbutton a:hover {
+	color: #FFF;
+}
+#sidebarbutton a:active { 
+	color: #FFF;
 }
 </style>
