@@ -48,7 +48,9 @@
 	</div>
 	
 	<div id='map'>
-		<div id="sidebarbutton" class="sideb">Hello World</div>
+		<div id="sidebarbutton">
+			<p class="sideb">Hello World</p>
+		</div>
 	</div>
 
 	<script>
@@ -115,7 +117,7 @@
 		closeButton: true,
 		position: 'left'
 	});
-	//map.addControl(sidebar);
+	map.addControl(sidebar);
 
 	setTimeout(function () {
 		sidebar.show();
