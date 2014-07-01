@@ -54,6 +54,9 @@
 
 	map.fitBounds(bounds);
 
+	map.options.maxZoom = 11;
+	map.options.minZoom = 6;
+
 	var topo = L.mapbox.tileLayer('examples.map-h67hf2ic', {
 		zIndex: 0
 	});
