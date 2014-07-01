@@ -106,14 +106,9 @@
 	var topo = L.mapbox.tileLayer('examples.map-h67hf2ic', {
 		zIndex: 0
 	});
-
-	var topo = L.tileLayer (
-		'http://{s}.acetate.geoiq.com/tiles/acetate/{z}/{x}/{y}.png',
-		{
-			attribution: 'Acetate tileset from GeoIQ'
-		}
-		).addTo(map);
-
+	
+	var topo = L.mapbox.tileLayer('aborruso.ilc3l20e');
+	
 	var CG_52 = L.tileLayer('tiles/CG_52_5/{z}/{x}/{y}.png', {
 		minZoom: 6,
 		maxZoom: 12,
@@ -144,7 +139,7 @@
 
 	var linee = L.mapbox.featureLayer(linegeojson,{zIndex: 3});
 
-	var minimappa = new L.Control.MiniMap(L.mapbox.tileLayer('examples.map-h67hf2ic'),{zoomLevelOffset:-4,toggleDisplay:true}).addTo(map);
+	var minimappa = new L.Control.MiniMap(L.mapbox.tileLayer('aborruso.ilc3l20e'),{zoomLevelOffset:-2,toggleDisplay:true}).addTo(map);
 
 
 	L.control.layers({
