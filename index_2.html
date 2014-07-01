@@ -45,7 +45,10 @@
 	<script>
 
 
-	var map = L.mapbox.map('map');
+	var map = L.mapbox.map('map'{
+		minZoom:6,
+		maxZoom: 11
+	});
 
 
 	var southWest = L.latLng(43.97914,7.59969),
