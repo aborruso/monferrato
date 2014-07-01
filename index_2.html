@@ -120,12 +120,20 @@
 		zIndex: 1
 	});
 
+	var CG_10 = L.tileLayer('tiles/CG_10/{z}/{x}/{y}.png', {
+		minZoom: 6,
+		maxZoom: 12,
+		tms: true,
+		opacity: 1,
+		zIndex: 2
+	});
+
 	var CG_38 = L.tileLayer('tiles/CG_38/{z}/{x}/{y}.png', {
 		minZoom: 5,
 		maxZoom: 11,
 		tms: true,
 		opacity: 1,
-		zIndex: 2
+		zIndex: 3
 	}).addTo(map);
 
 	
@@ -140,8 +148,9 @@
 	L.control.layers({
 		'Base': topo
 	}, {
-		'CG_38': CG_38,		
-		'CG_52': CG_52,
+		'CG_38': Anno 1840,		
+		'CG_52': Dopo il 1684,
+		'CG_10': Tra 1702 e il 1707,
 		'linee': linee,
 		'punti': punti		
 	},{autoZIndex:false,collapsed:false}).addTo(map);
