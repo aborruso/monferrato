@@ -70,7 +70,14 @@
 
 	<script src='http://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.js'></script>
 	<link href='http://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.css' rel='stylesheet' />
+	
+
 	<script src="./plugins/L.Control.Sidebar.js"></script>
+
+	<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
+	<link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
+	<link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
+
 
 	<div id="sidebar">
 		<h1>Una sidebar a disposizione</h1>
@@ -136,7 +143,7 @@
 
 	
 
-	var punti = L.mapbox.featureLayer(beni_monferrato,{zIndex: 7});
+	var punti = L.mapbox.featureLayer(puntigeojson,{zIndex: 7});
 
 	var Status_Mediol_1707 = L.mapbox.featureLayer(status_mediol_1707,{zIndex: 6});
 
