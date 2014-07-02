@@ -65,6 +65,8 @@
 
 	<script type="text/javascript" src="./data/punti.js"></script>
 	<script type="text/javascript" src="./data/Status_Mediol_1707.js"></script>
+	<script type="text/javascript" src="./data/Monferrato_1684.js"></script>
+
 	<script src='http://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.js'></script>
 	<link href='http://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.css' rel='stylesheet' />
 	<script src="./plugins/L.Control.Sidebar.js"></script>
@@ -133,9 +135,11 @@
 
 	
 
-	var punti = L.mapbox.featureLayer(puntigeojson,{zIndex: 4});
+	var punti = L.mapbox.featureLayer(puntigeojson,{zIndex: 7});
 
-	var Status_Mediol_1707 = L.mapbox.featureLayer(status_mediol_1707,{zIndex: 3});
+	var Status_Mediol_1707 = L.mapbox.featureLayer(status_mediol_1707,{zIndex: 6});
+
+	var Monferrato_1684 = L.mapbox.featureLayer(monferrato_1684,{zIndex: 5});
 
 	var minimappa = new L.Control.MiniMap(L.mapbox.tileLayer('aborruso.ilc3l20e'),{zoomLevelOffset:-4,toggleDisplay:true}).addTo(map);
 
@@ -146,6 +150,7 @@
 		"Anno 1840": CG_38,		
 		"Dopo il 1684": CG_52,
 		"Tra 1702 e il 1707": CG_10,
+		"Monferrato_1684": Monferrato_1684,
 		"1702 Confini del Montisferrati Ducatus": Status_Mediol_1707,
 		"punti": punti
 	},{autoZIndex:false,collapsed:false}).addTo(map);
