@@ -1,48 +1,9 @@
-<style>
-body { margin:0; padding:0; }
-#map { position:absolute; top:0; bottom:0; width:100%; }
-.lorem {
-	font-style: italic;
-	color: #AAA;
-}	
-
-#sidebarbutton {
-	position: absolute;
-	bottom: 2px;
-	left: 10px;
-	z-index: 100;
-	border-width: 1px;
-	-webkit-border-radius: 3px 3px 3px 3px;
-	border-radius: 3px 3px 3px 3px;
-	background: #3887BE;
-	border-color: #3887BE;
-	border-top-color: #FFF;
-	padding: 2px;
-	overflow-y: auto;
-	overflow-x: hidden;
-	max-height: 50px;
-	font-size: 11px;
+.chiese{
+	color: #EA5347;
 }
-#sidebarbutton p {
-	padding: 0px;
-	margin: 0px 2px 0px 2px;
-	color: #DAE0F1;
-	font-size: 11px;
+.palazzi{
+	color: #FCD209 ;
 }
-#sidebarbutton img {
-	padding: 0px;
-	margin: 0px;
+.castelli{
+	color: #4BB148 ;
 }
-#sidebarbutton a:link { 
-	color: #FFF;
-}
-#sidebarbutton a:visited { 
-	color: #FFF;
-}
-#sidebarbutton a:hover {
-	color: #FFF;
-}
-#sidebarbutton a:active { 
-	color: #FFF;
-}
-</style>

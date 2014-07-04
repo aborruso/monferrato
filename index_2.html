@@ -6,7 +6,7 @@
 	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 	<script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.js'></script>
 	<link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css' rel='stylesheet' />
-	<!-- <link rel="stylesheet" type="text/css" href="./css/stili.css"> -->
+	<link rel="stylesheet" type="text/css" href="./css/stili.css">
 	<style>
 	body { margin:0; padding:0; }
 	#map { position:absolute; top:0; bottom:0; width:100%; }
@@ -186,12 +186,12 @@
 											L.control.layers({
 												'Base': topo
 											}, {
-												"Anno 1840": CG_38,		
+												"1840": CG_38,		
 												"Dopo il 1684": CG_52,
 												"Tra 1702 e il 1707": CG_10,
-												"1684 Confine Status Sabaudicus<br/>- Status Mediolanensis": Monferrato_1684,
-												"1702 Confini del Montisferrati<br/>Ducatus": Status_Mediol_1707,
-												"punti": punti
+												"Dopo 1684: Confine<br/>Status Sabaudicus - Status Mediolanensis": Monferrato_1684,
+												"Tra 1702 e 1707: Confine<br/>Status Sabaudicus - Status Mediolanensis": Status_Mediol_1707,
+												"<span class='chiese'>Chiese</span> <span class='castelli'>Castelli</span> <span class='palazzi'>Palazzi</span>": punti
 											},{autoZIndex:false,collapsed:false}).addTo(map);
 
 											var sidebar = L.control.sidebar('sidebar', {
