@@ -153,15 +153,15 @@
 												maxZoom: 12,
 												tms: true,
 												opacity: 1,
-												zIndex: 2
-											});
+												zIndex: 1
+											}).addTo(map);
 
 											var CG_10 = L.tileLayer('tiles/CG_10/{z}/{x}/{y}.png', {
 												minZoom: 6,
 												maxZoom: 12,
 												tms: true,
 												opacity: 1,
-												zIndex: 3
+												zIndex: 2
 											});
 
 											var CG_38 = L.tileLayer('tiles/CG_38/{z}/{x}/{y}.png', {
@@ -169,9 +169,16 @@
 												maxZoom: 11,
 												tms: true,
 												opacity: 1,
-												zIndex: 1
+												zIndex: 4
 											}).addTo(map);
 
+											var CG_36 = L.tileLayer('tiles/CG_38/{z}/{x}/{y}.png', {
+												minZoom: 5,
+												maxZoom: 11,
+												tms: true,
+												opacity: 1,
+												zIndex: 3
+											});
 
 
 											var punti = L.mapbox.featureLayer(beni_monferrato,{zIndex: 7});
