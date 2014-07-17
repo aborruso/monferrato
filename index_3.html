@@ -208,6 +208,19 @@
 												"<span class='chiese'>Chiese</span> <span class='castelli'>Castelli</span> <span class='palazzi'>Palazzi</span>": punti
 											},{autoZIndex:true,collapsed:false});
 
+											var baseLayers = {
+												'base': topo
+											};
+
+											
+											var overlayLayers = {
+												'Bogotá': CG_52,
+												'OpenFireMap': CG_10
+											};
+
+											var controls = L.control.orderlayers(baseLayers, overlayLayers, {collapsed: false});
+											controls.addTo(map);
+
 											var sidebar = L.control.sidebar('sidebar', {
 												closeButton: true,
 												position: 'left'
