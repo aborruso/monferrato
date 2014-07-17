@@ -209,7 +209,7 @@
 											},{autoZIndex:true,collapsed:false});
 
 											var baseLayers = {
-												'base': topo
+												
 											};
 
 											
@@ -223,7 +223,7 @@
 												"<span class='chiese'>Chiese</span> <span class='castelli'>Castelli</span> <span class='palazzi'>Palazzi</span>": punti
 											};
 
-											var controls = L.control.orderlayers(, overlayLayers, {collapsed: false});
+											var controls = L.control.orderlayers(baseLayers, overlayLayers, {collapsed: false});
 											controls.addTo(map);
 
 											var sidebar = L.control.sidebar('sidebar', {
