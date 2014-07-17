@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8 />
+	<title>Incontri - Le Mappe del Monferrato</title>
+	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+	<script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.js'></script>
+	<link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css' rel='stylesheet' />
+	<link rel="stylesheet" type="text/css" href="./css/stili.css">
+
+	<script src="./js/jquery.js"></script>
+	<script src="./plugins/leaflet.control.orderlayers.min.js"></script>
+	<link rel="stylesheet" href="./plugins/css/leaflet.control.orderlayers.css" />
+
+
+	<style>
+	body { margin:0; padding:0; }
+	#map { position:absolute; top:0; bottom:0; width:100%; }
+	.lorem {
+		font-style: italic;
+		color: #AAA;
+	}	
+
+	#sidebarbutton {
+		position: absolute;
+		top: 70px;
+		left: 10px;
+		z-index: 100;
+		border-width: 1px;
+		-webkit-border-radius: 3px 3px 3px 3px;
+		border-radius: 3px 3px 3px 3px;
+		background: #3887BE;
+		border-color: #3887BE;
+		border-top-color: #FFF;
+		padding: 2px;
+		overflow-y: auto;
+		overflow-x: hidden;
+		max-height: 50px;
+		font-size: 14px;
+		font-family: 'Open Sans','Lucida Grande','Segoe UI',Arial,Verdana,'Lucida Sans Unicode',Tahoma,'Sans Serif';
+		font-weight:bold;
+	}
+	#sidebarbutton p {
+		padding: 0px;
+		margin: 0px 2px 0px 2px;
+		color: #DAE0F1;
+		font-size: 11px;
+	}
+	#sidebarbutton img {
+		padding: 0px;
+		margin: 0px;
+	}
+	#sidebarbutton a:link { 
+		color: #FFF;
+	}
+	#sidebarbutton a:visited { 
+		color: #FFF;
+	}
+	#sidebarbutton a:hover {
+		color: #FFF;
+	}
+	#sidebarbutton a:active { 
+		color: #FFF;
+	}
+	</style>
+
+	<link rel="stylesheet" href="./plugins/L.Control.Sidebar.css" />
+</head>
+
+<body>
+
+	<script type="text/javascript" src="./data/punti.js"></script>
+	<script type="text/javascript" src="./data/beni_moferrato.js"></script>
+	<script type="text/javascript" src="./data/Status_Mediol_1707.js"></script>
+	<script type="text/javascript" src="./data/Monferrato_1684.js"></script>
+
+	<script src='http://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.js'></script>
+	<link href='http://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.css' rel='stylesheet' />
+	
+
+	<script src="./plugins/L.Control.Sidebar.js"></script>
+
+	<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
+	<link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
+	<link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
+
+
+	<div id="sidebar">
+		<h1>Benvenuti</h1>
+		<p>Quattro delle <b>Carte Storiche</b> esposte nel contesto della
+			Mostra &ldquo;<i>Il Monferrato: 500 anni di Arte</i>&rdquo; sono
+			state georeferenziate, cio&egrave; stirate in modo differenziato,
+			cos&igrave; da renderle tra loro sovrapponibili: le carte in origine
+			non lo sono perch&egrave; hanno scale diverse, diverso orientamento,
+			i fogli su cui sono impresse hanno subito deformazioni...<br>Queste 4
+			Carte Storiche georeferenziate sono sovrapponibili anche ad una carta
+			attuale, in modo da facilitarne la lettura.</p>
+			<p>
+			</p>
+			<p>Le Carte Storiche georeferenziate sono (<b>tra [ ] il loro nome in
+				legenda</b>):</p>
+				<ul>
+					<li><p><b>[<a href="https://commons.wikimedia.org/wiki/File:Map_italy_monferrato_CG_52_montiferrati_ducatus_post_1684.jpg" target="_blank">Dopo il 1684</a>]</b> MONTISFERRATI DUCATUS</p>
+						<li><p><b>[<a href="https://commons.wikimedia.org/wiki/File:Map_italy_monferrato_CG_10_DUCATUS_MEDIOLANI_UNA_CUM_CONFYNIS_ACCURTA_TABULA_EXHIBITUS_AUCTUS_ET_EMENDATUS_PER_BAPT_HOMANNUM.jpg" target="_blank">Tra 1702 e 1707</a>]</b> DUCATUS/ MEDIOLANI/ UNA CUM
+							CONFYNIS/ ACCURTA TABULA EXHIBITUS / AUCTUS ET EMENDATUS / PER IOH.
+							BAPT. HOMANNUM</p>
+							<li><p><b>[<a href="https://commons.wikimedia.org/wiki/File:Map_italy_monferrato_CG_36_Regiae_Celsitudinis_Sabaudicae_Status_in_Territoria_divisi_BAPTISTAE_HOMANNI_Norimbergae_1726.jpg" target="_blank">1726</a>]</b> Regiae Celsitudinis Sabaudicae Status/ in quo/
+								DUCATUS SABAUDIAE/ PRINCIPATUS PEDEMONTIUM/ et DUCATUS
+								MONTISFERRATI/ in suas quasque Ditiones et Territoria divisi/ cum
+								finitimis Regionibus exhibentur/ Directione et sumptibus/ IO.
+								BAPTISTAE HOMANNI/ Norimbergae 1726</p>
+								<li><p><b>[<a href="https://commons.wikimedia.org/wiki/File:Map_italy_monferrato_CG_38_KINGDOM_OF_SARDINIA.jpg" target="_blank">1840</a>]</b> KINGDOM OF SARDINIA</p>
+								</ul>
+								<p>Per arricchire la lettura delle Carte Storiche sono stati aggiunti
+									alcuni layer:</p>
+									<ul>
+										<li><p><b>[Dopo il 1684: Confini del Montisferrati Ducatus]
+										</b>digitalizzazione dei confini del Monferrato presenti nella carta
+										omonima</p>
+										<li><p><b>[Tra 1702 e 1707: Confine Status Sabaudicus - Status
+											Mediolanensis]</b> digitalizzazione del confine presente nella carta
+											omonima</p>
+											<li><p><b>[Chiese Castelli Palazzi] </b>localizzazione dei beni
+												architettonici pi&ugrave; rilevanti del Monferrato (da BENI
+												ARCHITETTONICI-URBANISTICI-ARCHEOLOGICI (VIGLIANO) &ndash; STORICO
+												<a href="http://www.dati.piemonte.it/catalogodati/dato/1116-beni-culturali-ambientali-sita-beni-urbanistici-e-archeologici-vigliano-storico-.html" target="_blank">http://www.dati.piemonte.it/catalogodati/dato/1116-beni-culturali-ambientali-sita-beni-urbanistici-e-archeologici-vigliano-storico-.html</a>).</p>
+											</ul>
+											<p><b>Suggerimenti: zoomare (+/-), spostarsi sulla mappa (click e
+												trascinare); per confrontare le diverse carte, accendere e spegnere i
+												layer (inserendo il segno di spunta nel box).</b></p>		
+											</div>
+											<div id="sidebarbutton">
+												<p><a href="#" onclick="sidebar.toggle()">info</a></p>
+											</div>
+											<div id='map'>
+
+											</div>
+
+											<script>
+
+
+											var map = L.mapbox.map('map');
+
+
+											var southWest = L.latLng(43.97914,7.59969),
+											northEast = L.latLng(45.30694,9.19831),
+											bounds = L.latLngBounds(southWest, northEast);
+
+											map.fitBounds(bounds);
+
+											map.options.maxZoom = 11;
+											map.options.minZoom = 6;
+
+											var topo = L.mapbox.tileLayer('aborruso.ilc3l20e').addTo(map);
+
+											var CG_52 = L.tileLayer('tiles/CG_52/{z}/{x}/{y}.png', {
+												minZoom: 6,
+												maxZoom: 12,
+												tms: true,
+												opacity: 1,
+												zIndex: 1
+											}).addTo(map);
+
+											var CG_10 = L.tileLayer('tiles/CG_10/{z}/{x}/{y}.png', {
+												minZoom: 6,
+												maxZoom: 12,
+												tms: true,
+												opacity: 1,
+												zIndex: 2
+											});
+
+											var CG_36 = L.tileLayer('tiles/CG_36/{z}/{x}/{y}.png', {
+												minZoom: 5,
+												maxZoom: 11,
+												tms: true,
+												opacity: 1,
+												zIndex: 3
+											});
+
+											var CG_38 = L.tileLayer('tiles/CG_38/{z}/{x}/{y}.png', {
+												minZoom: 5,
+												maxZoom: 11,
+												tms: true,
+												opacity: 1,
+												zIndex: 4
+											});
+
+
+
+
+											var punti = L.mapbox.featureLayer(beni_monferrato,{zIndex: 7});
+
+											var Status_Mediol_1707 = L.mapbox.featureLayer(status_mediol_1707,{zIndex: 6});
+
+											var Monferrato_1684 = L.mapbox.featureLayer(monferrato_1684,{zIndex: 5});
+
+											var minimappa = new L.Control.MiniMap(L.mapbox.tileLayer('aborruso.ilc3l20e'),{zoomLevelOffset:-4,toggleDisplay:true}).addTo(map);
+
+
+											L.control.layers({												
+											}, {
+												"Dopo il 1684": CG_52,
+												"Tra 1702 e il 1707": CG_10,
+												"1726": CG_36,
+												"1840": CG_38,		
+												"Dopo il 1684: Confini del <br/>Montisferrati Ducatus": Monferrato_1684,
+												"Tra 1702 e 1707: Confine Status<br/>Sabaudicus - Status Mediolanensis": Status_Mediol_1707,
+												"<span class='chiese'>Chiese</span> <span class='castelli'>Castelli</span> <span class='palazzi'>Palazzi</span>": punti
+											},{autoZIndex:true,collapsed:false}).addTo(map);
+
+											var sidebar = L.control.sidebar('sidebar', {
+												closeButton: true,
+												position: 'left'
+											});
+											map.addControl(sidebar);
+
+											setTimeout(function () {
+												sidebar.show();
+											}, 500);
+
+
+
+											map.on('click', function () {
+												sidebar.hide();
+											})
+
+											sidebar.on('show', function () {
+												console.log('Sidebar will be visible.');
+											});
+
+											sidebar.on('shown', function () {
+												console.log('Sidebar is visible.');
+											});
+
+											sidebar.on('hide', function () {
+												console.log('Sidebar will be hidden.');
+											});
+
+											sidebar.on('hidden', function () {
+												console.log('Sidebar is hidden.');
+											});
+
+											L.DomEvent.on(sidebar.getCloseButton(), 'click', function () {
+												console.log('Close button clicked.');
+											});
+
+											</script>
+										</body>
+										</html>
