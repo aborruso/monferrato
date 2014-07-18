@@ -4,7 +4,7 @@
 
 L.Control.OrderLayers = L.Control.Layers.extend({
 	options: {
-		title: 'Layer Manager'
+		title: 'Layer'
 	},
 
 	onAdd: function (map) {
