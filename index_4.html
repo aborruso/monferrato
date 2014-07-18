@@ -223,22 +223,22 @@
 
 
 											var groupedOverlays = {
-												"Vettori": {
-													"Dopo il 1684: Confini del <br/>Montisferrati Ducatus": Monferrato_1684,
-													"Tra 1702 e 1707: Confine Status<br/>Sabaudicus - Status Mediolanensis": Status_Mediol_1707,
-													"<span class='chiese'>Chiese</span> <span class='castelli'>Castelli</span> <span class='palazzi'>Palazzi</span>": punti
-												},
 												"Carte storiche": {
 													"Dopo il 1684": CG_52,
 													"Tra 1702 e il 1707": CG_10,
 													"1707": CG_13,
 													"1726": CG_36,
 													"1840": CG_38	
+												},
+												"Vettori": {
+													"Dopo il 1684: Confini del <br/>Montisferrati Ducatus": Monferrato_1684,
+													"Tra 1702 e 1707: Confine Status<br/>Sabaudicus - Status Mediolanensis": Status_Mediol_1707,
+													"<span class='chiese'>Chiese</span> <span class='castelli'>Castelli</span> <span class='palazzi'>Palazzi</span>": punti
 												}
 											};
 
 
-											var layerControl = L.control.groupedLayers(baseLayers, groupedOverlays);
+											var layerControl = L.control.groupedLayers(baseLayers, groupedOverlays,{collapsed:false});
 											map.addControl(layerControl);
 
 
