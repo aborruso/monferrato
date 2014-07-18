@@ -155,7 +155,7 @@
 
 											var CG_52 = L.tileLayer('tiles/CG_52/{z}/{x}/{y}.png', {
 												minZoom: 6,
-												maxZoom: 12,
+												maxZoom: 11,
 												tms: true,
 												opacity: 1,
 												zIndex: 1
@@ -170,7 +170,7 @@
 											});
 
 											var CG_36 = L.tileLayer('tiles/CG_36/{z}/{x}/{y}.png', {
-												minZoom: 5,
+												minZoom: 6,
 												maxZoom: 11,
 												tms: true,
 												opacity: 1,
@@ -178,11 +178,19 @@
 											});
 
 											var CG_38 = L.tileLayer('tiles/CG_38/{z}/{x}/{y}.png', {
-												minZoom: 5,
+												minZoom: 6,
 												maxZoom: 11,
 												tms: true,
 												opacity: 1,
 												zIndex: 4
+											});											
+
+											var CG_13 = L.tileLayer('tiles/CG_13/{z}/{x}/{y}.png', {
+												minZoom: 6,
+												maxZoom: 11,
+												tms: true,
+												opacity: 1,
+												zIndex: 5
 											});
 
 
@@ -201,6 +209,7 @@
 											}, {
 												"Dopo il 1684": CG_52,
 												"Tra 1702 e il 1707": CG_10,
+												"1707": CG_13,
 												"1726": CG_36,
 												"1840": CG_38,		
 												"Dopo il 1684: Confini del <br/>Montisferrati Ducatus": Monferrato_1684,
