@@ -73,6 +73,8 @@
 	<script type="text/javascript" src="./data/beni_moferrato.js"></script>
 	<script type="text/javascript" src="./data/Status_Mediol_1707.js"></script>
 	<script type="text/javascript" src="./data/Monferrato_1684.js"></script>
+	<script type="text/javascript" src="./data/Monferrato_1707.js"></script>
+	<script type="text/javascript" src="./data/Monferrato_1726.js"></script>
 
 	<script src='http://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.js'></script>
 	<link href='http://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.css' rel='stylesheet' />
@@ -214,7 +216,11 @@
 
 
 
-			var punti = L.mapbox.featureLayer(beni_monferrato,{zIndex: 8});
+			var punti = L.mapbox.featureLayer(beni_monferrato,{zIndex: 10});
+			
+			var Monferrato_1726 = L.mapbox.featureLayer(Monferrato_1726,{zIndex: 9});
+
+			var Monferrato_1707 = L.mapbox.featureLayer(Monferrato_1707,{zIndex: 8});
 
 			var Status_Mediol_1707 = L.mapbox.featureLayer(status_mediol_1707,{zIndex: 7});
 
@@ -237,6 +243,8 @@
 				"&nbsp;1840": CG_38,		
 				"Dopo il 1684: Confini del <br/>Montisferrati Ducatus": Monferrato_1684,
 				"Tra 1702 e 1707: Confine Status<br/>Sabaudicus - Status Mediolanensis": Status_Mediol_1707,
+				"Monferrato_1707": Monferrato_1707,
+				"Monferrato_1726": Monferrato_1726,
 				"<span class='chiese'>Chiese</span> <span class='castelli'>Castelli</span> <span class='palazzi'>Palazzi</span>": punti
 			};
 
