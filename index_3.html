@@ -86,7 +86,6 @@
 
 
 	<div id="sidebar">
-		<h1>Benvenuti</h1>
 		<p>Quattro delle <b>Carte Storiche</b> esposte nel contesto della
 			Mostra &ldquo;<i>Il Monferrato: 500 anni di Arte</i>&rdquo; sono
 			state georeferenziate, cio&egrave; stirate in modo differenziato,
@@ -104,13 +103,15 @@
 		<ul>
 			<li><p><b>[<a href="https://commons.wikimedia.org/wiki/File:Map_italy_monferrato_CG_52_montiferrati_ducatus_post_1684.jpg" target="_blank">Dopo il 1684</a>]</b> MONTISFERRATI DUCATUS</p>
 				<li><p><b>[<a href="https://commons.wikimedia.org/wiki/File:Map_italy_monferrato_CG_10_DUCATUS_MEDIOLANI_UNA_CUM_CONFYNIS_ACCURTA_TABULA_EXHIBITUS_AUCTUS_ET_EMENDATUS_PER_BAPT_HOMANNUM.jpg" target="_blank">Tra 1702 e 1707</a>]</b> DUCATUS/ MEDIOLANI/ UNA CUM
-					CONFYNIS/ ACCURTA TABULA EXHIBITUS / AUCTUS ET EMENDATUS / PER IOH.
+					CONFYNIS/ ACCURTA TABULA EXHIBITUS / AUCTUS ET EMENDATUS / PER IOH
 					BAPT. HOMANNUM
 				</p>
+				<li><p><b>[<a href="https://commons.wikimedia.org/wiki/File:Map_italy_monferrato_CG_13_CARTE_DU_PIEMONT_ET_DU_MONFERRAT_Dress%C3%A9e_sur_plusieurs_Cartes_Manuscrits_ou_Imprim%C3%A9es.jpg" target="_blank">1707</a>]</b> CARTE DU PIEMONT ET DU MONFERRAT
+				</p> 
 				<li><p><b>[<a href="https://commons.wikimedia.org/wiki/File:Map_italy_monferrato_CG_36_Regiae_Celsitudinis_Sabaudicae_Status_in_Territoria_divisi_BAPTISTAE_HOMANNI_Norimbergae_1726.jpg" target="_blank">1726</a>]</b> Regiae Celsitudinis Sabaudicae Status/ in quo/
 					DUCATUS SABAUDIAE/ PRINCIPATUS PEDEMONTIUM/ et DUCATUS
 					MONTISFERRATI/ in suas quasque Ditiones et Territoria divisi/ cum
-					finitimis Regionibus exhibentur/ Directione et sumptibus/ IO.
+					finitimis Regionibus exhibentur/ Directione et sumptibus/ IO
 					BAPTISTAE HOMANNI/ Norimbergae 1726
 				</p>
 				<li><p><b>[<a href="https://commons.wikimedia.org/wiki/File:Map_italy_monferrato_CG_38_KINGDOM_OF_SARDINIA.jpg" target="_blank">1840</a>]</b> KINGDOM OF SARDINIA
@@ -129,6 +130,12 @@
 					Mediolanensis]</b> digitalizzazione del confine presente nella carta
 					omonima
 				</p>
+			<li>
+				<p><b>[1707: Confini del Monferrat]</b> digitalizzazione dei confini del Monferrato presenti nella carta omonima
+				</p>
+			<li>
+				<p><b>[1726: Confini del Ducatus Montisferrati]</b> digitalizzazione dei confini del Monferrato presenti nella carta omonima
+				</p>	
 				<li>
 					<p><b>[Chiese Castelli Palazzi] </b>localizzazione dei beni
 						architettonici pi&ugrave; rilevanti del Monferrato (da BENI
@@ -136,9 +143,7 @@
 						<a href="http://www.dati.piemonte.it/catalogodati/dato/1116-beni-culturali-ambientali-sita-beni-urbanistici-e-archeologici-vigliano-storico-.html" target="_blank">http://www.dati.piemonte.it/catalogodati/dato/1116-beni-culturali-ambientali-sita-beni-urbanistici-e-archeologici-vigliano-storico-.html</a>).
 					</p>
 				</ul>
-				<p><b>Suggerimenti: zoomare (+/-), spostarsi sulla mappa (click e
-					trascinare); per confrontare le diverse carte, accendere e spegnere i
-					layer (inserendo il segno di spunta nel box).</b>
+				<p><b>Suggerimenti: per confrontare le diverse carte, accendere e spegnere i layer.</b>
 				</p>		
 			</div>
 			<div id="sidebarbutton">
@@ -235,7 +240,7 @@
 				"<span class='chiese'>Chiese</span> <span class='castelli'>Castelli</span> <span class='palazzi'>Palazzi</span>": punti
 			};
 
-			
+
 
 			var controls = L.control.orderlayers(baseLayers, overlayLayers, {collapsed: false,order: 'qgis'});
 			controls.addTo(map);
