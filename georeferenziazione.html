@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="utf-8">
-  <title>Un'idea di Monferrato - Georeferenziazione</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="">
+	<meta charset="utf-8">
+	<title>Un'idea di Monferrato - Georeferenziazione</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
 
 	<!--link rel="stylesheet/less" href="less/bootstrap.less" type="text/css" /-->
 	<!--link rel="stylesheet/less" href="less/responsive.less" type="text/css" /-->
@@ -15,72 +15,72 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 
-  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
-  <![endif]-->
+    <![endif]-->
 
-  <!-- Fav and touch icons -->
+    <!-- Fav and touch icons -->
 <!--   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
   <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
   <link rel="shortcut icon" href="img/favicon.png"> -->
   
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/scripts.js"></script>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/scripts.js"></script>
 </head>
 
 <body>
-<div class="container">
-	<div class="row clearfix">
-		<div class="col-md-12 column">
-			<nav class="navbar navbar-default" role="navigation">
-				<div class="navbar-header">
-					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="./index.html">Monferrato</a>
-				</div>
-				
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li>
-							<a href="./index_2.html">Mappa</a>
-						</li>
-						<li class="active">
-							<a href="./georeferenziazione.html">Georeferenziazione</a>
-						</li>
-						<li>
-							<a href="./credits.html">Credits</a>
-						</li>
-						
-					</ul>
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<nav class="navbar navbar-default" role="navigation">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="./index.html">Monferrato</a>
+					</div>
 					
-				</div>
-				
-			</nav>
-			<div class="jumbotron">
-				<h1>
-					Un'idea di Monferrato
-				</h1>
-				<p>
-					Un progetto di web mapping realizzato nel contesto degli Incontri <a href="http://www.arteneidintorni.it/incontri-mappe-monferrato/" target="_blank">"Il Monferrato: Innovazione per il Territorio"</a>
-				</p>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li>
+								<a href="./index_2.html">Mappa</a>
+							</li>
+							<li class="active">
+								<a href="./georeferenziazione.html">Georeferenziazione</a>
+							</li>
+							<li>
+								<a href="./credits.html">Credits</a>
+							</li>
+							
+						</ul>
+						
+					</div>
+					
+				</nav>
+				<div class="jumbotron">
+					<h1>
+						Un'idea di Monferrato
+					</h1>
+					<p>
+						Un progetto di web mapping realizzato nel contesto degli Incontri <a href="http://www.arteneidintorni.it/incontri-mappe-monferrato/" target="_blank">"Il Monferrato: Innovazione per il Territorio"</a>
+					</p>
 
-				<p>
-					<a class="btn btn-primary btn-large" href="http://www.arteneidintorni.it/incontri-mappe-monferrato/" target="_blank">Scropri di più</a>
-				</p>
+					<p>
+						<a class="btn btn-primary btn-large" href="http://www.arteneidintorni.it/incontri-mappe-monferrato/" target="_blank">Scropri di più</a>
+					</p>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class="row clearfix">
-		<div class="col-md-12 column">
-<h2>Georeferenziazione</h2>
-				<p>Il termine ha parecchi significati. Nei sw GIS (<em>Geographic Information System</em>) <em>georeferencing</em> è il processo che, data una immagine, porta ad attribuire coordinate geografiche a ciascun pixel.</p><p>Il primo passo è riconoscere sull&#39;immagine oggetti (punti) che sia possibile ritrovare nella realtà (rilevandone, ad es., le coordinate con un GPS) o su una carta di adeguata qualità.</p><p>Acquisiti un certo numero di coppie di punti (chiamati <em>Ground Control Points</em>), il passo successivo è applicare all&#39;immagine un algoritmo di trasformazione che adatti l&#39;immagine rispetto ai punti di coordinate geografiche note. Ciò può comportare traslazione, rotazione, cambio di scala dell&#39;immagine, ma anche il suo stiramento, la sua riproiezione su una superficie curva...</p><p>Per la georeferenziazione i sw GIS usano due tipi di algoritmi di trasformazione:</p><ul ><li>trasformazione globale: si suppone che esista una regola che correla l&#39;immagine con la carta (coordinate pixel con coordinate geografiche); applicata questa regola (di trasformazioni lineare, polinomiale di vario ordine...) all&#39;intera immagine, potrà restare uno certo scarto tra le coordinate geografiche attribuite ai punti sull&#39;immagine e le coordinate geografiche conosciute; l&#39;analisi di questi scarti permette di valutare quanto la regola di trasformazione applicata è corretta</li><li>trasformazione locale: i punti GCP (devono essere numerosi e ben distribuiti) vengono utilizzati per costruire una rete di triangoli, ogni triangolo dell&#39;immagine verrà deformato in modo da portare le coordinate di questi punti sull&#39;immagine a coincidere con le coordinate geografiche note.</li></ul><p>Nel nostro caso l&#39;immagine da georeferenziare è la scansione ad alta risoluzione delle Carte Storiche (vedi <a href="https://commons.wikimedia.org/wiki/User:Cortesi/gallery" target="_top">Wikimedia</a>)</p><p>Queste carte sono in scala relativamente piccola, molti elementi sono rappresentati in modo simbolico (ad es. le città), spesso non sono indicate le strade, i rilievi sono rappresentati in prospettiva, sappiamo che i fiumi possono variare nel tempo i loro percorsi (soprattutto nelle zone pianeggianti), se è presente un reticolato cartografico, poco o nulla sappiamo su come è stato costruito... In breve è estremamente problematico riconoscere coppie di punti sulla carta storica e su carte attuali.</p><p>Per la georeferenziazione di queste carte, inizialmente sono state tentate trasformazioni globali, ma i risultati sono stati insoddisfacenti. Per cui le 4 carte storiche qui presente sono state georeferenziate usando una trasformazione locale (<i>Thin Plate Spline</i> in QuantumGIS).</p>
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<h2>Georeferenziazione</h2>
+				<p>Il termine ha parecchi significati. Nei software GIS (<em>Geographic Information System</em>) <em>georeferencing</em> è il processo che, data una immagine, porta ad attribuire coordinate geografiche a ciascun pixel.</p><p>Il primo passo è riconoscere sull&#39;immagine oggetti (punti) che sia possibile ritrovare nella realtà (rilevandone, ad es., le coordinate con un GPS) o su una carta di adeguata qualità.</p><p>Acquisiti un certo numero di coppie di punti (chiamati <em>Ground Control Points</em>), il passo successivo è applicare all&#39;immagine un algoritmo di trasformazione che adatti l&#39;immagine rispetto ai punti di coordinate geografiche note. Ciò può comportare traslazione, rotazione, cambio di scala dell&#39;immagine, ma anche il suo stiramento, la sua riproiezione su una superficie curva...</p><p>Per la georeferenziazione i sw GIS usano due tipi di algoritmi di trasformazione:</p><ul ><li>trasformazione globale: si suppone che esista una regola che correla l&#39;immagine con la carta (coordinate pixel con coordinate geografiche); applicata questa regola (di trasformazioni lineare, polinomiale di vario ordine...) all&#39;intera immagine, potrà restare uno certo scarto tra le coordinate geografiche attribuite ai punti sull&#39;immagine e le coordinate geografiche conosciute; l&#39;analisi di questi scarti permette di valutare quanto la regola di trasformazione applicata è corretta</li><li>trasformazione locale: i punti GCP (devono essere numerosi e ben distribuiti) vengono utilizzati per costruire una rete di triangoli, ogni triangolo dell&#39;immagine verrà deformato in modo da portare le coordinate di questi punti sull&#39;immagine a coincidere con le coordinate geografiche note.</li></ul><p>Nel nostro caso l&#39;immagine da georeferenziare è la scansione ad alta risoluzione delle Carte Storiche (vedi <a href="https://commons.wikimedia.org/wiki/User:Cortesi/gallery" target="_top">Wikimedia</a>)</p><p>Queste carte sono in scala relativamente piccola, molti elementi sono rappresentati in modo simbolico (ad es. le città), spesso non sono indicate le strade, i rilievi sono rappresentati in prospettiva, sappiamo che i fiumi possono variare nel tempo i loro percorsi (soprattutto nelle zone pianeggianti), se è presente un reticolato cartografico, poco o nulla sappiamo su come è stato costruito... In breve è estremamente problematico riconoscere coppie di punti sulla carta storica e su carte attuali.</p><p>Per la georeferenziazione di queste carte, inizialmente sono state tentate trasformazioni globali, ma i risultati sono stati insoddisfacenti. Per cui le 5 carte storiche qui presenti sono state georeferenziate usando una trasformazione locale (<i>Thin Plate Spline</i> in QuantumGIS).</p>
 				<h3>Un commento</h3>
-				<p>Qual è il significato della georeferenziazione delle carte storiche qui sperimentata? Certo non ricuperare una precisione e una congruenza cartografica che queste carte non hanno è mai avuto. Il suo significato sta nel rendere più facilmente confrontabili le diverse carte, e analizzabili le notevoli e problematiche differenze che tra esse esistono.  Le incongruenze che emergono vanno interpretate: sono dovute ai limiti intrinseci della tecnica di georeferenziazione applicate a carte storiche, a incongruenze cartografiche originarie, connesse alla precisione delle carte stesse, oppure hanno un significato?</p>
-		</div>
+				<p>Qual è il significato della georeferenziazione delle carte storiche qui sperimentata? Certo non ricuperare una precisione e una congruenza cartografica che queste carte non hanno mai avuto. Il suo significato sta nel rendere più facilmente confrontabili le diverse carte, e analizzabili le notevoli e problematiche differenze che tra esse esistono.  Le incongruenze che emergono vanno interpretate: sono dovute ai limiti intrinseci della tecnica di georeferenziazione applicate a carte storiche, a incongruenze cartografiche originarie, connesse alla precisione delle carte stesse, oppure hanno un significato?</p>
+			</div>
 
+		</div>
 	</div>
-</div>
 </body>
 </html>
