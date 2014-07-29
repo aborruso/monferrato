@@ -62,6 +62,7 @@
 	#sidebarbutton a:active { 
 		color: #FFF;
 	}
+
 	</style>
 
 	<link rel="stylesheet" href="./plugins/L.Control.Sidebar.css" />
@@ -97,6 +98,7 @@
 			Carte Storiche georeferenziate sono sovrapponibili anche ad una carta
 			attuale, in modo da facilitarne la lettura.
 		</p>
+		
 		<p>
 		</p>
 		<p>Le Carte Storiche georeferenziate sono (<b>tra [ ] il loro nome in
@@ -145,8 +147,11 @@
 						<a href="http://www.dati.piemonte.it/catalogodati/dato/1116-beni-culturali-ambientali-sita-beni-urbanistici-e-archeologici-vigliano-storico-.html" target="_blank">http://www.dati.piemonte.it/catalogodati/dato/1116-beni-culturali-ambientali-sita-beni-urbanistici-e-archeologici-vigliano-storico-.html</a>).
 					</p>
 				</ul>
-				<p><b>Suggerimenti: per confrontare le diverse carte, accendere e spegnere i layer.</b>
-				</p>		
+				<p>
+					<b>Suggerimenti: per confrontare le diverse carte, accendere e spegnere i layer.</b>
+				</p>
+				
+						
 			</div>
 			<div id="sidebarbutton">
 				<p><a href="#" onclick="sidebar.toggle()">info</a>
@@ -226,14 +231,11 @@
 
 			var Monferrato_1684 = L.mapbox.featureLayer(monferrato_1684,{zIndex: 6});
 
-			var minimappa = new L.Control.MiniMap(L.mapbox.tileLayer('aborruso.ilc3l20e'),{zoomLevelOffset:-4,toggleDisplay:true}).addTo(map);
-
-
+			var minimappa = new L.Control.MiniMap(L.mapbox.tileLayer('aborruso.ilc3l20e'),{zoomLevelOffset:-4,toggleDisplay:false}).addTo(map);
 
 			var baseLayers = {
 
 			};
-
 
 			var overlayLayers = {
 				"&nbsp;Dopo il 1684": CG_52,
@@ -249,7 +251,6 @@
 			};
 
 
-
 			var controls = L.control.orderlayers(baseLayers, overlayLayers, {collapsed: false,order: 'qgis'});
 			controls.addTo(map);
 
@@ -262,8 +263,6 @@
 			setTimeout(function () {
 				sidebar.show();
 			}, 500);
-
-
 
 			map.on('click', function () {
 				sidebar.hide();
